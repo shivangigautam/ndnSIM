@@ -74,3 +74,7 @@ def build(bld):
 
     obj = bld.create_ns3_program('ndn-simple-with-pit-count-stats', all_modules)
     obj.source = 'ndn-simple-with-pit-count-stats.cc'
+
+    if 'ip-faces' in bld.env['NDN_plugins']:
+        obj = bld.create_ns3_program('ndn-simple-tcp', all_modules)
+        obj.source = 'ndn-simple-tcp.cc'
